@@ -78,9 +78,8 @@ export class HomeScreen extends React.Component {
     return (
       <View style={styles.mainContainer}>
 
-        <View>
-          {effects}
-        </View>
+        {effects}
+
 
 
 

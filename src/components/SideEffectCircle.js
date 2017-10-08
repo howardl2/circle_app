@@ -25,10 +25,11 @@ export default class SideEffectCircleComponent extends React.Component {
     super(props);
     this.state = {
       pan: new Animated.ValueXY(),
-      isClicked: 1,
+      isClicked: 0,
       touchColor: '#FFFFFF',
       containerAttributes: this.props.container,
     };
+    this._checkColorOnClick = this._checkColorOnClick.bind(this);
   };
 
 
@@ -57,7 +58,7 @@ export default class SideEffectCircleComponent extends React.Component {
 
 
   _checkColorOnClick() {
-    ++this.state.isClicked;
+    this.setState({isClicked: this.state.isClicked + 1});
     if (this.state.isClicked % 2 == 0) {
       // Was clicked
       this.setState({touchColor: "#61C0BF"});
